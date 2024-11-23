@@ -100,12 +100,16 @@ func (h *Handler) Handle(ctx context.Context, r slog.Record) error {
 		formattedAttrs = colorize(darkGray, string(bytes))
 	}
 
-	h.w.Write([]byte(fmt.Sprintln(
+	_, err = h.w.Write([]byte(fmt.Sprintln(
 		colorize(lightGray, r.Time.Format(timeFormat)),
 		level,
 		colorize(white, r.Message),
 		formattedAttrs,
 	)))
+
+	if err != nil {
+		return err
+	}
 
 	return nil
 }

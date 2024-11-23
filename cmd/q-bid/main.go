@@ -14,11 +14,9 @@ import (
 	"github.com/Mrpotatosse/q-bid/internal/log"
 )
 
-var (
-	logLevel = flag.String("log-level", os.Getenv("LOG_LEVEL"), "log level")
-)
-
 func main() {
+	logLevel := flag.String("log-level", os.Getenv("LOG_LEVEL"), "log level")
+
 	flag.Parse()
 	// Logger configuration
 	ctx := context.Background()
