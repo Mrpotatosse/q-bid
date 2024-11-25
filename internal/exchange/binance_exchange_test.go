@@ -13,8 +13,8 @@ func TestGetAllPairs(t *testing.T) {
 
 	binanceExchange, err := NewBinanceExchange(
 		ctx,
-		WithApiKey(os.Getenv(BINANCE_API_KEY)),
-		WithSecretKey(os.Getenv(BINANCE_SECRET_KEY)),
+		WithAPIKey(os.Getenv(BinanceAPIEnv)),
+		WithSecretKey(os.Getenv(BinanceSecretEnv)),
 		WithAuthorizedCurrencies("BTC", "ETH"),
 	)
 
@@ -35,8 +35,8 @@ func TestGetAllTriples(t *testing.T) {
 
 	binanceExchange, err := NewBinanceExchange(
 		ctx,
-		WithApiKey(os.Getenv(BINANCE_API_KEY)),
-		WithSecretKey(os.Getenv(BINANCE_SECRET_KEY)),
+		WithAPIKey(os.Getenv(BinanceAPIEnv)),
+		WithSecretKey(os.Getenv(BinanceSecretEnv)),
 		WithAuthorizedCurrencies("BTC", "ETH", "SOL"),
 	)
 

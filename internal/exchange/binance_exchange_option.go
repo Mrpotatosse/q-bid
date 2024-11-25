@@ -3,7 +3,7 @@ package exchange
 type BinanceExchangeConfig struct {
 	apiKey               string
 	secretKey            string
-	baseUrl              string
+	baseURL              string
 	authorizedCurrencies []string
 }
 
@@ -17,7 +17,7 @@ func (o BinanceExchangeOptionFunc) apply(c *BinanceExchangeConfig) {
 	o(c)
 }
 
-func WithApiKey(key string) BinanceExchangeOptionFunc {
+func WithAPIKey(key string) BinanceExchangeOptionFunc {
 	return func(bec *BinanceExchangeConfig) {
 		bec.apiKey = key
 	}
@@ -29,9 +29,9 @@ func WithSecretKey(key string) BinanceExchangeOptionFunc {
 	}
 }
 
-func WithBaseUrl(url string) BinanceExchangeOptionFunc {
+func WithBaseURL(url string) BinanceExchangeOptionFunc {
 	return func(bec *BinanceExchangeConfig) {
-		bec.baseUrl = url
+		bec.baseURL = url
 	}
 }
 

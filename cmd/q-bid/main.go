@@ -50,8 +50,8 @@ func run(ctx context.Context) error {
 
 	binanceExchange, err := exchange.NewBinanceExchange(
 		ctx,
-		exchange.WithApiKey(os.Getenv(exchange.BINANCE_API_KEY)),
-		exchange.WithSecretKey(os.Getenv(exchange.BINANCE_SECRET_KEY)),
+		exchange.WithAPIKey(os.Getenv(exchange.BinanceAPIEnv)),
+		exchange.WithSecretKey(os.Getenv(exchange.BinanceSecretEnv)),
 		exchange.WithAuthorizedCurrencies(
 			"BTC",
 			"ETH",

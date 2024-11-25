@@ -23,8 +23,8 @@ func NewBinanceExchange(ctx context.Context, opts ...BinanceExchangeOption) (*Bi
 	}
 
 	var client *binance.Client
-	if config.baseUrl != "" {
-		client = binance.NewClient(config.apiKey, config.secretKey, config.baseUrl)
+	if config.baseURL != "" {
+		client = binance.NewClient(config.apiKey, config.secretKey, config.baseURL)
 	} else {
 		client = binance.NewClient(config.apiKey, config.secretKey)
 	}
@@ -54,7 +54,6 @@ func NewBinanceExchange(ctx context.Context, opts ...BinanceExchangeOption) (*Bi
 						break
 					}
 				}
-
 			}
 		}
 	}
